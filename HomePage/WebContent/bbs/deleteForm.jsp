@@ -1,0 +1,42 @@
+<%@ page contentType="text/html; charset=UTF-8" %> 
+<%@ include file = "/ssi/ssi_bbs.jsp" %> 
+
+<!DOCTYPE html> 
+<html> 
+<head>
+  <title>Bootstrap Example</title>
+  <META CHARSET="UTF-8">
+<style type="text/css">
+#red{color:red;}
+</style>
+</head>
+<body>
+<jsp:include page ="/menu/top.jsp" />
+<div class="container">
+<h1 class="col-sm-offset-2 col-sm-10">삭제</h1>
+ <form class="form-horizontal" method="post" 
+       action="deleteProc.jsp">
+  <input type="hidden" name="bbsno" value="<%=request.getParameter("bbsno") %>"> 
+  <input type="hidden" name="col" value="<%=request.getParameter("col") %>"> 
+  <input type="hidden" name="word" value="<%=request.getParameter("word") %>"> 
+  <input type="hidden" name="nowPage" value="<%=request.getParameter("nowPage") %>"> 
+  
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="content">비밀번호</label>
+    <div class="col-sm-6">
+     <input type="password" id="passwd" name="passwd" class="form-control">
+    </div>  
+  </div>
+  <p id="red" class="col-sm-offset-2 col-sm-6">삭제하면 복구할 수 없습니다.</p>
+  
+  <div class="form-group">
+   <div class="col-sm-offset-2 col-sm-5">
+    <button class="btn">삭제</button>
+    <button type="reset" class="btn">취소</button>
+   </div>
+  </div> 
+
+</form>  
+</div>
+</body> 
+</html> 
